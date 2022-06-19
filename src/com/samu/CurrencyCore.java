@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.awt.Dimension;
 
+import com.samu.myObjects.ApiConverter;
 import com.samu.utility.ComboBoxUtility;
 
 public class CurrencyCore extends Application{
@@ -23,6 +24,9 @@ public class CurrencyCore extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
+		 //initialize the converter
+		 ApiConverter converter = new ApiConverter();
 		
 		 //title
 		 primaryStage.setTitle("Currrency converter!");
@@ -48,15 +52,21 @@ public class CurrencyCore extends Application{
 	     TextField inputTextfield = new TextField();
 	     grid.add(inputTextfield, 1, 1);
 	     
-	     //create box with currencies
-	     Label labelCurrencies = new Label("Choose the currency you want to convert to:");
-	     grid.add(labelCurrencies, 0, 2);
-	     ComboBox<String> currenciesBox = ComboBoxUtility.createCurrencyCombo();
-	     grid.add(currenciesBox, 1, 2);
+	     //create box with currencies -- FROM
+	     Label labelCurrenciesFrom = new Label("Choose the currency you want to convert from:");
+	     grid.add(labelCurrenciesFrom, 0, 2);
+	     ComboBox<String> currenciesBoxFrom = ComboBoxUtility.createCurrencyCombo();
+	     grid.add(currenciesBoxFrom, 1, 2);
+	     
+	     //create box with currencies -- TO
+	     Label labelCurrenciesTo = new Label("Choose the currency you want to convert to:");
+	     grid.add(labelCurrenciesTo, 0, 3);
+	     ComboBox<String> currenciesBoxTo = ComboBoxUtility.createCurrencyCombo();
+	     grid.add(currenciesBoxTo, 1, 3);
 	     
 	     //create submit button
-	     Button submit = new Button("convert!");
-	     grid.add(submit, 0, 3);
+	     Button submit = new Button("convert !");
+	     grid.add(submit, 0, 4);
 	     
 	     //show results
 	     
