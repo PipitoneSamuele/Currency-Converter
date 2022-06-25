@@ -1,4 +1,4 @@
-package com.samu.myObjects;
+package com.samu.objects;
 
 import com.posadskiy.currencyconverter.CurrencyConverter;
 import com.posadskiy.currencyconverter.config.ConfigBuilder;
